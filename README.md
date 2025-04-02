@@ -40,7 +40,7 @@ garden
     │      └── plantsfunc             # Работа с растением
     ├── storage                       # Логика хранения данных
     │      └── dbfunc                 # Работа с БД
-    ├── docker-compose.sql
+    ├── docker-compose.yml
     ├── go.mod
     ├── go.sum
     └── main.go                       # Точка входа
