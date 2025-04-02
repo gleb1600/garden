@@ -18,7 +18,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-	connString := "postgres://garden:secret@localhost:5432/gardendb?sslmode=disable"
+	connString := "postgres://garden:secret@localhost:5431/gardendb?sslmode=disable"
 	pool, err := pgxpool.New(ctx, connString)
 	if err != nil {
 		fmt.Printf("Ошибка подключения: %v\n", err)
