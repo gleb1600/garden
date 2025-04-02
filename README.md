@@ -3,6 +3,7 @@
 ## Особенности проекта
 - Динамическая модель роста растений с учетом времени
 - Работа с PostgreSQL через pgx
+- Запуск через docker-compose, работа с образом postgres
 - CRUD операции
 - Автоматическое ухудшение характеристик растений (жажда, голод)
 - Интерактивное управление через командную строку
@@ -10,35 +11,14 @@
 
 ## Работа
 
-1. **Установите PostgreSQL локально**:
-
-https://www.postgresql.org/download/
-
-2. **Откройте "SQL Shell (psql) и введите пароль от postgres"**
-```psql
-Server [localhost]: 
-Database [postgres]: 
-Port [5432]: 
-Username [postgres]: 
-Пароль: ваш пароль от postgres
-```
-3. **В psql создайте пользователя 'garden' с паролем 'secret' и БД 'gardendb'**:
-```sql
-CREATE USER garden WITH PASSWORD 'secret';
-CREATE DATABASE garden OWNER garden;
-\q
-```
-4. **Откройте PowerShell и выполните миграцию и инициализацию данных**:
+1. **Запуск**:
 ```bash
-& 'C:\Program Files\PostgreSQL\17\bin\psql.exe' -U garden -d gardendb -f migrations\init.sql
-
-& 'C:\Program Files\PostgreSQL\17\bin\psql.exe' -U garden -d gardendb -f scripts\seed.sql
+docker-compose up -d
 ```
-5. **Запуск**:
 ```bash
 go run main.go
 ```
-6. **Управляйте садом**:
+2. **Управляйте садом**:
 ```bash
 Доступные команды:
   list                 - Показать все растения
